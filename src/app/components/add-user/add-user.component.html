@@ -1,0 +1,55 @@
+
+    <c-header>
+        <c-container fluid>
+          <c-header-brand [routerLink]>Brand</c-header-brand>
+          <c-header-nav class="ms-auto">
+            <c-nav-item>
+              <a [active]="true" [routerLink] cNavLink>Home</a>
+            </c-nav-item>
+            <c-nav-item>
+              <a cNavLink routerLink="/components/alert">Link</a>
+            </c-nav-item>
+            <c-nav-item>
+              <a cNavLink disabled routerLink="/components/alert">Disabled</a>
+            </c-nav-item>
+            <c-dropdown alignment="end">
+              <a cHeaderToggler cDropdownToggle cNavLink [caret]="false"></a>
+              <ul cDropdownMenu>
+                <li><a [routerLink] cDropdownItem>Action</a></li>
+                <li><a [routerLink] cDropdownItem>Another action</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a [routerLink] cDropdownItem>Something else</a></li>
+              </ul>
+            </c-dropdown>
+          </c-header-nav>
+        </c-container>
+        <c-header-divider></c-header-divider>
+        <!-- <c-container fluid>
+          <c-header-text>Additional text</c-header-text>
+        </c-container> -->
+      </c-header>
+     <div class="mr-auto">
+        <h2>Register</h2>
+     </div>
+     <form cForm (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+        <label cLabel for="inputEmail-1">Email address</label>
+        <input cFormControl id="inputEmail-1" required type="email" name="email"  [(ngModel)]="username">
+        <div cFormText>
+        We'll never share your email with anyone else
+        </div>
+        </div>
+        <div class="mb-3">
+        <label cLabel for="inputPassword-1">Password</label>
+        <input cFormControl id="inputPassword-1" name="password" type="password" [(ngModel)]="password">
+        </div>
+        <c-form-check class="mb-3">
+        <input cFormCheckInput id="checkMeOut-1" type="checkbox" name="checkbox" [(ngModel)]="checked">
+        <label cFormCheckLabel for="checkMeOut-1">Check me out</label>
+        </c-form-check>
+        <input cButton color="primary" type="submit">
+        </form>
+    
+
