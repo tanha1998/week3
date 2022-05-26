@@ -20,10 +20,15 @@ export class UserService {
   getUsers():Observable<User[]>{
     return this.http.get<User[]>(this.apiUrl);
   }
-  deleteTask(user:User):Observable<User>{
-    const url = `${this.apiUrl}/${user.id}`;
-    return this.http.delete<User>(url)
+  getUser(id:any):Observable<User>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<User>(url)
   }
+  deleteU(id:any):Observable<User>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<User>(url,httpOptions)
+  }
+  
   addUsers(user:User):Observable<User>{
     return this.http.post<User>(this.apiUrl,user,httpOptions)
   }

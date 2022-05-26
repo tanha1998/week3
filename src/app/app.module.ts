@@ -23,10 +23,15 @@ import {
   SidebarModule,
   TabsModule,
   TableModule,
-  PaginationModule
+  PaginationModule,
+
   
  
 } from '@coreui/angular';
+import { ChartjsModule } from '@coreui/angular-chartjs';
+
+import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
+
 import { UtilitiesModule } from '@coreui/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserComponent } from './components/add-user/add-user.component';
@@ -70,9 +75,11 @@ import { UserItemComponent } from './components/user-item/user-item.component';
   ButtonModule,
   CardModule,
   DropdownModule,
-  PaginationModule
+  PaginationModule,
+  AngularToastifyModule
+  ,ChartjsModule
   ],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

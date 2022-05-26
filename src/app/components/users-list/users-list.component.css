@@ -1,8 +1,16 @@
-label{
-    width: 40px;
-    height: 41px;
+table tbody .remove{
+    margin-left: 5px;
+    color: blue;
     cursor: pointer;
 }
-label:hover{
- border: 2px solid black;
+input {outline: none; width: 100px;}
+#myInput{
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
 }
