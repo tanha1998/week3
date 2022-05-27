@@ -1,1 +1,31 @@
-<p>detail-user works!</p>
+<h3>Update User</h3>
+<form cForm  *ngIf="user" >
+    <div class="mb-3">
+        <label cLabel for="inputEmail-1">Email address</label>
+        <input cFormControl id="inputEmail-1" type="email" [(ngModel)]="user.email">
+        <div cFormText>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label cLabel for="firstname-1">First Name</label>
+        <input cFormControl id="firstname-1" type="text"  [(ngModel)]="user.firstname">
+    </div>
+    <div class="mb-3">
+        <label cLabel for="lastname-1">Last Name</label>
+        <input cFormControl id="lastname-1" type="text"  [(ngModel)]="user.lastname">
+    </div>
+    <div class="mb-3">
+        <label cLabel for="adress-1">Adress</label>
+        <input cFormControl id="adress-1" type="text"  [(ngModel)]="user.adress">
+    </div>
+
+    <div class="mb-3">
+        <label cLabel for="inputPassword-1">Password</label>
+        <input cFormControl id="inputPassword-1" type="password"  [(ngModel)]="user.password">
+    </div>
+    <c-form-check class="mb-3">
+        <input cFormCheckInput id="checkMeOut-1" type="checkbox"  [(ngModel)]="user.checked">
+        <label cFormCheckLabel for="checkMeOut-1">Check me out</label>
+    </c-form-check>
+    <input cButton color="primary" type="submit" >
+</form>

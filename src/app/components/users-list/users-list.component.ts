@@ -13,19 +13,19 @@ import { User } from 'src/app/user';
 })
 export class UsersListComponent implements OnInit {
   // @Input() user?: User
-    
+  
   users:User[] = [];
-  user:User[] = []
+  searchtext?:string
+  // user:User[] = []
   constructor(@Inject(DOCUMENT) document: Document,private userService:UserService,private _toastService:ToastService
     ) {
-      const th= document.getElementById('myInput');
-      console.log(th);
-      
+  
      }
 
   ngOnInit(): void {
     this.userService.getUsers()
-    .subscribe((users)=>(this.users=users))
+    .subscribe((users)=>(this.users=users));
+    
   }
   deleteUser(user:User):void{
     this.users = this.users.filter(h=>h!==user);

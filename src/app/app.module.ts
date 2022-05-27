@@ -24,12 +24,9 @@ import {
   TabsModule,
   TableModule,
   PaginationModule,
-
-  
- 
 } from '@coreui/angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
-
+import { SearchPipe } from './search.pipe';
 import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
 
 import { UtilitiesModule } from '@coreui/angular';
@@ -38,7 +35,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
-
+import { DetailUserComponent } from './components/detail-user/detail-user.component';
 
 
 
@@ -49,6 +46,9 @@ import { UserItemComponent } from './components/user-item/user-item.component';
     HeaderComponent,
     UsersListComponent,
     UserItemComponent,
+    DetailUserComponent,
+    SearchPipe,
+    
   ],
   imports: [
   BrowserModule,

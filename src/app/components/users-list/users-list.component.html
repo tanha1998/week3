@@ -2,11 +2,11 @@
 <br>
 <br>
 <h4>List User</h4>
-<input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="myInput" placeholder="Search infomation..." [(ngModel)]="searchtext" title="Type in a name">
 <table [striped]="true" cTable color="success">
     <thead>
     <tr>
-    <!-- <th scope="col">STT</th> -->
+    <th scope="col">STT</th>
     <th scope="col">Email</th>
     <th scope="col">First-name</th>
     <th scope="col">Last-name</th>
@@ -17,9 +17,11 @@
     </tr>   
     </thead>
     <tbody>
-    <tr *ngFor="let user of users"
-    >
-            <!-- <th scope="row"></th> -->
+    <tr 
+    *ngFor="let user of users | customerEmailFilter:searchtext; let i = index"
+     routerLink="/detail/{{user.id}}"
+    >   
+            <th scope="row">{{i+1}}</th>
             <td>{{user.email}}</td>
             <td>{{user.firstname}}</td>
             <td>{{user.lastname}}</td>
@@ -28,6 +30,7 @@
             <td>{{user.checked}}</td>
             <td >
                <span class="remove" (click)="deleteUser(user)">Remove</span>
+               <a>Update</a>
             </td>
     </tr>
 </tbody>

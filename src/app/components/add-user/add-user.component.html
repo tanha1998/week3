@@ -36,12 +36,13 @@
 </div>
 <c-row>
   <c-col>
-    <form   cForm (ngSubmit)="onSubmit()">
+    <form   cForm  #customStylesForm="ngForm" [gutter]="3"
+     (ngSubmit)="onSubmit()">
       <c-row>
         <c-col>
           <div class="mb-3 xs">
             <label cLabel for="inputEmail-1">Email</label>
-            <input cFormControl id="inputEmail-1" required type="email" name="email" [(ngModel)]="email">
+            <input cFormControl id="inputEmail-1" type="email" name="email" [(ngModel)]="email">
             <div cFormText>
               We'll never share your email with anyone else
             </div>
@@ -50,7 +51,7 @@
         <c-col>
           <div class="mb-3 xs">
             <label cLabel for="firstname-1">First Name</label>
-            <input cFormControl id="firstname-1" name="firstname" type="text"  [(ngModel)]="firstname">
+            <input cFormControl id="firstname-1"  name="firstname"  type="text"  [(ngModel)]="firstname">
           </div>
         </c-col>
         <c-col>
@@ -78,8 +79,9 @@
         <input cFormCheckInput id="checkMeOut-1" type="checkbox" name="checkbox" [(ngModel)]="checked">
         <label cFormCheckLabel for="checkMeOut-1">Check me out</label>
       </c-form-check>
-      <input cButton color="primary" type="submit">
+      <input cButton color="primary" type="submit" value="Add">
     </form>
+    
   </c-col>
   <c-col>
    <img id="imageinfo" src="https://www.alithya.com/hubfs/Imported_Blog_Media/Blog_Achitecture-2.jpg" alt="info">
