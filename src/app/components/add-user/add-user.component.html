@@ -1,34 +1,4 @@
-<c-header>
-  <c-container fluid>
-    <c-header-brand [routerLink]>Brand</c-header-brand>
-    <c-header-nav class="ms-auto">
-      <c-nav-item>
-        <a [active]="true" [routerLink] cNavLink>Home</a>
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink routerLink="/components/alert">Link</a>
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink disabled routerLink="/components/alert">Disabled</a>
-      </c-nav-item>
-      <c-dropdown alignment="end">
-        <a cHeaderToggler cDropdownToggle cNavLink [caret]="false"></a>
-        <ul cDropdownMenu>
-          <li><a [routerLink] cDropdownItem>Action</a></li>
-          <li><a [routerLink] cDropdownItem>Another action</a></li>
-          <li>
-            <hr cDropdownDivider>
-          </li>
-          <li><a [routerLink] cDropdownItem>Something else</a></li>
-        </ul>
-      </c-dropdown>
-    </c-header-nav>
-  </c-container>
-  <c-header-divider></c-header-divider>
-  <!-- <c-container fluid>
-          <c-header-text>Additional text</c-header-text>
-        </c-container> -->
-</c-header>
+
 <div class="mr-auto">
   <br>
   <h2>Enter infomation</h2>
@@ -71,7 +41,9 @@
         <c-col>
           <div class="mb-3 xs">
             <label cLabel for="inputPassword-1">Password</label>
-            <input cFormControl id="inputPassword-1" name="text" type="password"  [(ngModel)]="password">
+            <input cFormControl id="inputPassword-1" name="text" [type]="showpassword ? 'text':'password'"  [(ngModel)]="password">
+            <input type="checkbox" id="Checkpassword" (change)="showpassword = !showpassword">
+            <label for="Checkpassword" >Show pass</label>
           </div>
         </c-col>
       </c-row>
@@ -79,7 +51,7 @@
         <input cFormCheckInput id="checkMeOut-1" type="checkbox" name="checkbox" [(ngModel)]="checked">
         <label cFormCheckLabel for="checkMeOut-1">Check me out</label>
       </c-form-check>
-      <input cButton color="primary" type="submit" value="Add">
+      <input cButton id="btnAdd" color="primary" type="submit" value="Add">
     </form>
     
   </c-col>

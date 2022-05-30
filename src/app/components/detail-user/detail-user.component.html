@@ -1,31 +1,36 @@
 <h3>Update User</h3>
-<form cForm  *ngIf="user" >
+
+<input cButton color="primary" type="submit" value="Back" (click)="goBack()">
+<form cForm *ngIf="user">
     <div class="mb-3">
         <label cLabel for="inputEmail-1">Email address</label>
-        <input cFormControl id="inputEmail-1" type="email" value="{{user.email}}" [(ngModel)]="user.email">
+        <input cFormControl id="inputEmail-1" type="email"  [(ngModel)]="user.email" name="email"
+            >
         <div cFormText>
         </div>
     </div>
     <div class="mb-3">
         <label cLabel for="firstname-1">First Name</label>
-        <input cFormControl id="firstname-1" type="text" value="{{user.firstname}}"  [(ngModel)]="user.firstname">
+        <input cFormControl id="firstname-1" type="text" [(ngModel)]="user.firstname" name="firstname" >
     </div>
     <div class="mb-3">
         <label cLabel for="lastname-1">Last Name</label>
-        <input cFormControl id="lastname-1" type="text"  value="{{user.lastname}}"  [(ngModel)]="user.lastname">
+        <input cFormControl id="lastname-1" type="text"  [(ngModel)]="user.lastname" name="lastname">
     </div>
     <div class="mb-3">
         <label cLabel for="adress-1">Adress</label>
-        <input cFormControl id="adress-1" type="text"  value="{{user.adress}}" [(ngModel)]="user.adress">
+        <input cFormControl id="adress-1" type="text" [(ngModel)]="user.adress" name="adress" >
     </div>
 
     <div class="mb-3">
         <label cLabel for="inputPassword-1">Password</label>
-        <input cFormControl id="inputPassword-1" type="password"  value="{{user.password}}"  [(ngModel)]="user.password">
+        <input cFormControl id="inputPassword-1" [type]="showpass ? 'text' : 'password'" [(ngModel)]="user.password" name="password">
+        <input type="checkbox" (change)="showpass = !showpass">
+        <label for="showpass">Show pass</label>
     </div>
     <c-form-check class="mb-3">
-        <input cFormCheckInput id="checkMeOut-1" type="checkbox"  value="{{user.checked}}" [(ngModel)]="user.checked">
+        <input cFormCheckInput id="checkMeOut-1" type="checkbox"  [(ngModel)]="user.checked" name="checked">
         <label cFormCheckLabel for="checkMeOut-1">Check me out</label>
     </c-form-check>
-    <input cButton color="primary" type="submit" >
+    <input cButton color="primary" type="submit" value="Update" (click)="save(user)">
 </form>

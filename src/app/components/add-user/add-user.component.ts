@@ -17,6 +17,7 @@ export class AddUserComponent implements OnInit {
   //     data: [40, 20, 80, 10]
   //   }]
   // };
+  showpassword:boolean=false
   user?:User;
 
   @Output() onAddUser: EventEmitter<User> = new EventEmitter();

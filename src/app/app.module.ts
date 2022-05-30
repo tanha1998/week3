@@ -25,6 +25,8 @@ import {
   TableModule,
   PaginationModule,
 } from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
+
 import { ChartjsModule } from '@coreui/angular-chartjs';
 import { SearchPipe } from './search.pipe';
 import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
@@ -77,9 +79,10 @@ import { DetailUserComponent } from './components/detail-user/detail-user.compon
   DropdownModule,
   PaginationModule,
   AngularToastifyModule
-  ,ChartjsModule
+  ,ChartjsModule,
+  IconModule,
   ],
-  providers: [ToastService],
+  providers: [ToastService,IconSetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/user';
-
+import { freeSet } from '@coreui/icons/js/free';
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -13,7 +13,8 @@ import { User } from 'src/app/user';
 })
 export class UsersListComponent implements OnInit {
   // @Input() user?: User
-  
+  icons = freeSet ;
+
   users:User[] = [];
   searchtext?:string
   // user:User[] = []

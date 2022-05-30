@@ -9,6 +9,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./detail-user.component.css'],
 })
 export class DetailUserComponent implements OnInit {
+  showpass?:boolean = false
   user?:User
   constructor(
     private userService: UserService,
@@ -19,8 +20,14 @@ export class DetailUserComponent implements OnInit {
   ngOnInit(): void {
     this.getUse()
   }
+  goBack(): void {
+    this.location.back();
+  }
   getUse(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!,10);
     this.userService.getUser(id).subscribe((user) => (this.user = user));
+  }
+  save(user:User) {
+      this.userService.updateUser(user).subscribe(()=>this.goBack())
   }
 }
